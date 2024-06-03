@@ -1,11 +1,17 @@
-/* Asi podemos hacer comentarios en JS */
 
 
-const NUEVE = 9; 
 
-for (let i = 1; i <= 10; i++) {
-
-    const RESULTADO = NUEVE * i; 
-
-    console.log (NUEVE + "x" + i + "=" + RESULTADO)
+function ingresarNombre () {
+    let nombreIngresado = prompt("Por favor ingrese su nombre");
+    let apellidoIngresado = prompt ("por favor ingrese su apellido")
+    console.log("el nombre ingresado es " + nombreIngresado + apellidoIngresado);
 }
+
+let numero = 0;
+
+while (numero < 2) {
+    ingresarNombre ()
+    numero ++
+}
+
+ingresarNombre()
