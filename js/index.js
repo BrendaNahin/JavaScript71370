@@ -28,11 +28,11 @@ function Productos(id, nombre, precio) {
 let obj = [
     { id: 1, nombre: "Jagermeister", precio: 30000 },
     { id: 2, nombre: "Fernet Branca", precio: 10000 },
-    { id: 3, nombre: "Ron Santa Teresa", precio: 40000 },
-    { id: 4, nombre: "Whisky XO", precio: 45000 },
-    { id: 5, nombre: "Tequila Corralejo", precio: 32000 },
-    { id: 6, nombre: "Bourbon Jim Beam", precio: 25000 },
-    { id: 7, nombre: "Gin Heraclito", precio: 17000 },
+    { id: 3, nombre: "Ron Santa Teresa", precio: 86000 },
+    { id: 4, nombre: "Whisky Hibiki", precio: 333000 },
+    { id: 5, nombre: "Tequila Corralejo", precio: 75280 },
+    { id: 6, nombre: "Bourbon Wild Turkey", precio: 50300 },
+    { id: 7, nombre: "Gin Baigur Saigon", precio: 167000 },
     { id: 8, nombre: "Limoncello Luxardo", precio: 58000 }
 ];
 
