@@ -8,41 +8,42 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalCompra = 0;
 
     cards.forEach(card => {
-        const incrementBtn = card.querySelector('.increment');
-        const decrementBtn = card.querySelector('.decrement');
-        const quantityText = card.querySelector('.quantity');
-        const price = parseFloat(card.querySelector('.pCard').textContent.replace('Valor: $', '').replace(',', ''));
+        const incrementoBtn = card.querySelector('.incremento');
+        const decrementoBtn = card.querySelector('.decremento');
+        const cantidadText = card.querySelector('.cantidad');
+        const precio = parseFloat(card.querySelector('.pCard').textContent.replace('Valor: $', '').replace(',', ''));
 
-        let quantity = 0;
+        let cantidad = 0;
 
-        incrementBtn.addEventListener('click', function() {
-            quantity++;
-            quantityText.textContent = quantity;
+        incrementoBtn.addEventListener('click', function() {
+            cantidad++;
+            cantidadText.textContent = cantidad;
         });
 
-        decrementBtn.addEventListener('click', function() {
-            if (quantity > 0) {
-                quantity--;
-                quantityText.textContent = quantity;
+        decrementoBtn.addEventListener('click', function() {
+            if (cantidad > 0) {
+                cantidad--;
+                cantidadText.textContent = cantidad;
             }
         });
 
         finalizarCompraBtn.addEventListener('click', function() {
-            totalCompra += quantity * price;
+            totalCompra += cantidad * precio;
             totalP.textContent = totalCompra.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
-            quantity = 0;
-            quantityText.textContent = quantity;
+            cantidad = 0;
+            cantidadText.textContent = cantidad;
         });
     });
 
     // Resetear la compra
+    
     resetCompraBtn.addEventListener('click', function() {
         totalCompra = 0;
         totalP.textContent = totalCompra.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
 
         cards.forEach(card => {
-            const quantityText = card.querySelector('.quantity');
-            quantityText.textContent = '0';
+            const cantidadText = card.querySelector('.cantidad');
+            cantidadText.textContent = '0';
         });
     });
 });
