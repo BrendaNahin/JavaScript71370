@@ -1,94 +1,85 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.cardUno, .cardDos, .cardTres');
+    
+    cards.forEach(card => {
+        const incrementBtn = card.querySelector('.increment');
+        const decrementBtn = card.querySelector('.decrement');
+        const quantityText = card.querySelector('.quantity');
+        
+        let quantity = 0; // Inicializar cantidad
+        
+        // Incrementar cantidad
+        incrementBtn.addEventListener('click', function() {
+            quantity++;
+            quantityText.textContent = quantity;
+        });
+        
+        // Decrementar cantidad (con validación para no ir por debajo de cero)
+        decrementBtn.addEventListener('click', function() {
+            if (quantity > 0) {
+                quantity--;
+                quantityText.textContent = quantity;
+            }
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.cardUno, .cardDos, .cardTres');
+    const finalizarCompraBtn = document.getElementById('finalizarCompra');
+    const resetCompraBtn = document.getElementById('resetCompra');
+    const totalP = document.getElementById('total');
 
-// pre entrega 1
+    let totalCompra = 0;
 
-// function ingresarNombre () {
-//     let nombreIngresado = prompt("Por favor ingrese su nombre");
-//     let apellidoIngresado = prompt ("por favor ingrese su apellido")
-//     console.log("el nombre ingresado es " + nombreIngresado + apellidoIngresado);
-// }
+    cards.forEach(card => {
+        const incrementBtn = card.querySelector('.increment');
+        const decrementBtn = card.querySelector('.decrement');
+        const quantityText = card.querySelector('.quantity');
+        const price = parseFloat(card.querySelector('.pCard').textContent.replace('Valor: $', '').replace(',', ''));
 
-// let numero = 0;
+        let quantity = 0;
 
-// while (numero < 2) {
-//     ingresarNombre ()
-//     numero ++
-// }
+        incrementBtn.addEventListener('click', function() {
+            quantity++;
+            quantityText.textContent = quantity;
+        });
 
-// ingresarNombre()
+        decrementBtn.addEventListener('click', function() {
+            if (quantity > 0) {
+                quantity--;
+                quantityText.textContent = quantity;
+            }
+        });
 
-
-// pre entrega 2 
-
-function Productos(id, nombre, precio) {
-    this.id = id;
-    this.nombre = nombre;
-    this.precio = precio;
-}
-
-let obj = [
-    { id: 1, nombre: "Jagermeister", precio: 30000 },
-    { id: 2, nombre: "Fernet Branca", precio: 10000 },
-    { id: 3, nombre: "Ron Santa Teresa", precio: 86000 },
-    { id: 4, nombre: "Whisky Hibiki", precio: 333000 },
-    { id: 5, nombre: "Tequila Corralejo", precio: 75280 },
-    { id: 6, nombre: "Bourbon Wild Turkey", precio: 50300 },
-    { id: 7, nombre: "Gin Baigur Saigon", precio: 167000 },
-    { id: 8, nombre: "Limoncello Luxardo", precio: 58000 }
-];
-
-console.log(obj);
-
-let nombreUsuario = prompt("Bienvenido a la Tienda de pociones, por favor ingrese su nombre").toLowerCase();
-console.log("El nombre ingresado es, " + nombreUsuario); 
-alert("Un placer " + nombreUsuario);
-
-let edad = parseInt(prompt("Por favor ingresa tu edad"));
-
-if (edad >= 18) {
-    alert("Perfecto, puedes continuar");
-} else {
-    alert("Lo sentimos, aun no puedes comprar nuestras pociones");
-    // Termina el script si la edad es menor de 18
-    throw new Error("Edad no permitida para comprar");
-}
-
-// Array para almacenar los productos seleccionados
-let productosSeleccionados = [];
-
-// Bucle para permitir al usuario seguir comprando
-let seguirComprando = true;
-while (seguirComprando) {
-    // Mostrar la lista de productos al usuario
-    let listaProductos = "¿Qué elixir te gustaría comprar hoy?\n";
-    obj.forEach(producto => {
-        listaProductos += `${producto.id}. ${producto.nombre} - $${producto.precio}\n`;
+        finalizarCompraBtn.addEventListener('click', function() {
+            totalCompra += quantity * price;
+            totalP.textContent = totalCompra.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+            quantity = 0;
+            quantityText.textContent = quantity;
+        });
     });
 
-    // Solicitar al usuario que elija un producto por ID
-    let productoSeleccionadoId = parseInt(prompt(listaProductos));
+    // Resetear la compra
+    resetCompraBtn.addEventListener('click', function() {
+        totalCompra = 0;
+        totalP.textContent = totalCompra.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
 
-    // Encontrar el producto seleccionado
-    let productoSeleccionado = obj.find(producto => producto.id === productoSeleccionadoId);
+        cards.forEach(card => {
+            const quantityText = card.querySelector('.quantity');
+            quantityText.textContent = '0';
+        });
+    });
+});
 
-    if (productoSeleccionado) {
-        console.log("El producto seleccionado es, " + productoSeleccionado.nombre);
-        alert("Has seleccionado: " + productoSeleccionado.nombre + " - $" + productoSeleccionado.precio);
-        // Agregar el producto seleccionado al array de productos seleccionados
-        productosSeleccionados.push(productoSeleccionado);
-    } else {
-        console.log("Producto no encontrado");
-        alert("Producto no encontrado");
+
+function login(){
+
+    const USUARIO = document.getElementById('usuario').value;
+    const PASSWORD = document.getElementById('password').value;
+
+    if(USUARIO && PASSWORD) {
+        localStorage.setItem('usuario', USUARIO);
+        localStorage.setItem ('password', PASSWORD);   
     }
 
-    // Preguntar al usuario si desea seguir comprando
-    let respuesta = prompt("¿Deseas comprar algo más? (sí/no)").toLowerCase();
-    if (respuesta !== 'sí' && respuesta !== 'si') {
-        seguirComprando = false;
-    }
 }
-
-// Calcular el total de los productos seleccionados
-let total = productosSeleccionados.reduce((sum, producto) => sum + producto.precio, 0);
-
-// Mostrar el total al usuario
-alert("Gracias por visitar nuestra tienda, " + nombreUsuario + "! El total de tu compra es: $" + total);

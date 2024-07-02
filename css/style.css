@@ -1,11 +1,269 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(202, 159, 159, 0.943);
+}
+
+.reparacion {
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(202, 159, 159, 0.943);
+    background-image: url('https://images.unsplash.com/photo-1556327070-9661a89d51db?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    
 }
 
 
+li {
+    list-style: none;
+}
 
-#particles-js 
-{
-    background-color: black;
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: orange;
+}
+
+/* HEADER NAVBAR */
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+.action_btn {
+    background-color: rgba(225, 120, 15, 0.619);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* MENU DESPLEGABLE */
+
+.desplegar_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60%;
+    height: 0;
+    width: 300px;
+    background: rgba(62, 12, 12, 0.489);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.desplegar_menu.open {
+    height: 240px;
+}
+
+.desplegar_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.desplegar_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* MAIN */
+
+
+
+/* SECTION BIENVENIDOS */
+
+section#bienvenidos {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    
+}
+
+#bienvenidos h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+/* SECTION CARDS */
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+}
+.imgCard {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.tituloCard {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.pCardUno {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.botonCard {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.botonCard:hover {
+    background-color: #0056b3;
+}
+
+#totalCompra {
+    height: 30px;
+}
+
+#footer {
+    height: 30px;
+    color: #666;
+    
+} 
+
+
+
+/* FORMULARIO */
+
+form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    all: unset;
+    padding: 20px 0px 0px 0px;
+    border-bottom: 1px solid pink;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: pink;
+    color: grey;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(203, 98, 115);
+    color: black;
+}
+
+/* mediaqueries */
+
+@media (max-width: 992px) {
+
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .desplegar_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .desplegar_menu {
+        left: 2rem;
+        width: unset;
+    }
 } 

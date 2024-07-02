@@ -5,128 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/icons/magic.png" type="image/x-icon">
     <title>Tienda de pociones</title>
+
 </head>
-
 <body>
-    <div id="particles-js"></div>
+    <header id="header">
+        <div class="navbar">
+            <div class="logo"> <a href="./index.html">Tres Escobas</a> </div>
+            <ul class="links">
+                <li><a href="./pages/elixires.html">Elixires</a></li>
+                <li><a href="./pages/picoteo.html">Picoteo</a></li>
+                <li><a href="./pages/vajilla.html">Vajilla</a></li>
+                <li><a href="./pages/conocenos.html">Conocenos</a></li>
+            </ul>
+            <a href="./pages/conocenos.html" class="action_btn">Iniciar Sesion</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
 
+        <div class="desplegar_menu">
+            <li><a href="elixires">Elixires</a></li>
+            <li><a href="picoteo">Picoteo</a></li>
+            <li><a href="vajilla">Vajilla</a></li>
+            <li><a href="conocenos">Conocenos</a></li>
+            <li><a href="#" class="action_btn">Iniciar Sesion</a></li>
 
-    <script src="particles.min.js"></script>
-    <script> particlesJS(
-            {
-                "particles": {
-                    "number": {
-                        "value": 99,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#ffffff"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        },
-                        "image": {
-                            "src": "img/github.svg",
-                            "width": 100,
-                            "height": 100
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#f7f7f7",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 6,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "repulse"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 400,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
-                    }
-                },
-                "retina_detect": true
-            }
-        )
-    </script>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section id="bienvenidos">
+            <h1>Bienvenidos a Tres Escobas</h1>
+            <p>Aquí podrán adquirir los mas destacables y raros elixires <br> ¿estas listo para esta aventura?</p>
+        </section>
+
+        <div id="cards">
+
+            <div class="cardUno">
+                <img src="./assets/images/jagermeister.jpg" alt="Botella de jagermeister" class="imgCard">
+                <h2 class="tituloCard">JAGERMEISTER</h2>
+                <p class="pCard">Valor: $28.000</p>
+                <div class="quantity-controls">
+                    <button class="decrement">-</button>
+                    <span class="quantity">0</span>
+                    <button class="increment">+</button>
+                </div>
+            
+            </div>
+
+            <div class="cardDos">
+                <img src="./assets/images/JackDaniels.jpg" alt="Botella de Jack Daniels" class="imgCard">
+                <h2 class="tituloCard">JACK DANIELS</h2>
+                <p class="pCard">Valor: $40.000</p>
+                <div class="quantity-controls">
+                    <button class="decrement">-</button>
+                    <span class="quantity">0</span>
+                    <button class="increment">+</button>
+                </div>
+                
+                
+            </div>
+
+            <div class="cardTres">
+                <img src="./assets/images/bumbuRon.jpg" alt="Botella de bumbu ron" class="imgCard">
+                <h2 class="tituloCard">BUMBU RON</h2>
+                <p class="pCard">Valor: $150.000</p>
+                <div class="quantity-controls">
+                    <button class="decrement">-</button>
+                    <span class="quantity">0</span>
+                    <button class="increment">+</button>
+                </div>
+                
+            </div>
+
+            
+        </div>
+
+        <div id="totalCompra">
+            <h3>Total de la compra:</h3>
+            <p id="total">0</p>
+            <button id="finalizarCompra">Finalizar Compra</button>
+            <button id="resetCompra">Resetear Compra</button>
+        </div>
+        
+
+    </main>
+
+    <footer id="footer">
+    
+    </footer>
     <script src="./js/index.js"></script>
-</body>
+</body> 
 
 </html>
