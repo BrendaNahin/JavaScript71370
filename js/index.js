@@ -1,28 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.cardUno, .cardDos, .cardTres');
-    
-    cards.forEach(card => {
-        const incrementBtn = card.querySelector('.increment');
-        const decrementBtn = card.querySelector('.decrement');
-        const quantityText = card.querySelector('.quantity');
-        
-        let quantity = 0; // Inicializar cantidad
-        
-        // Incrementar cantidad
-        incrementBtn.addEventListener('click', function() {
-            quantity++;
-            quantityText.textContent = quantity;
-        });
-        
-        // Decrementar cantidad (con validación para no ir por debajo de cero)
-        decrementBtn.addEventListener('click', function() {
-            if (quantity > 0) {
-                quantity--;
-                quantityText.textContent = quantity;
-            }
-        });
-    });
-});
+
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.cardUno, .cardDos, .cardTres');
     const finalizarCompraBtn = document.getElementById('finalizarCompra');
