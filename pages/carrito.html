@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/icons/magic.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Carrito</title>
+</head>
+
+<body class="">
+    <header id="header">
+
+        <div class="navbar">
+            <div class="logo"> <a href="../index.html">Tres Escobas</a> </div>
+            <ul class="links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./picoteo.html">Picoteo</a></li>
+                <li><a href="./elixires.html">Elixires</a></li>
+                <li><a href="./conocenos.html">Conocenos</a></li>
+
+            </ul>
+            <a href="./conocenos.html" class="action_btn">Iniciar Sesion</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+
+    </header>
+
+    <main>
+
+
+        <h2 class="tituloCarrito">Carrito de compras</h2>
+        <div class="carritoContain">
+            <p class="carritoVacio">¿Aun no agregras nada a tu carrito? </p>
+            
+            <div class="carritoProductos">
+
+                <div class="carritoProducto">
+                    <img src="../assets/images/producto1.jpg" alt="">
+                    <div class="carritoProductoName">
+                        <h6>Nombre</h6>
+                        <h3> producto 1</h3>
+                    </div>
+
+                    <div class="carritoProductoCant">
+                        <h6>cantidad</h6>
+                        <h3>1</h3>
+                    </div>
+
+                    <div class="carritoProductoPrice">
+                        <h6>Valor</h6>
+                        <h3>$20.000</h3>
+                    </div>
+
+                    <div class="carritoProductoSubtotal">
+                        <h6>Sub-total</h6>
+                        <h3>$20.000</h3>
+                    </div>
+
+                    <button class="eliminarProducto"><i class="fa-solid fa-trash"></i></button>
+
+
+                </div>
+
+                <div class="carritoProducto">
+                    <img src="../assets/images/producto2.jpg" alt="">
+                    <div class="carritoProductoName">
+                        <h6>Nombre</h6>
+                        <h3> producto 2</h3>
+                    </div>
+
+                    <div class="carritoProductoCant">
+                        <h6>cantidad</h6>
+                        <h3>1</h3>
+                    </div>
+
+                    <div class="carritoProductoPrice">
+                        <h6>Valor</h6>
+                        <h3>$20.000</h3>
+                    </div>
+
+                    <div class="carritoProductoSubtotal">
+                        <h6>Sub-total</h6>
+                        <h3>$40.000</h3>
+                    </div>
+
+                    <button class="eliminarProducto"><i class="fa-solid fa-trash"></i></button>
+
+
+                </div>
+
+            </div>
+
+            <div class="carritoComandos">
+                <div class="carritoComandosIzq">
+                    <button class="vaciar">Vaciar carrito</button>
+                </div>
+                <div class="carritoComandosDer">
+                    <div class="totalAcciones">
+                        <p>Total:</p>
+                        <p id="total">$40000</p>
+                    </div>
+                    <button class="comprar">Comprar </button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </main>
+
+    <footer> <p>Derechos reservados por Copyrigth <i class="fa-regular fa-copyright"></i></p></footer>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ body {
     background-image: url('https://images.unsplash.com/photo-1556327070-9661a89d51db?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
-    
+
 }
 
 
@@ -128,7 +128,6 @@ header {
 /* MAIN */
 
 
-
 /* SECTION BIENVENIDOS */
 
 section#bienvenidos {
@@ -139,7 +138,7 @@ section#bienvenidos {
     justify-content: center;
     text-align: center;
     color: #fff;
-    
+
 }
 
 #bienvenidos h1 {
@@ -147,6 +146,88 @@ section#bienvenidos {
     margin-bottom: 1rem;
 
 }
+
+
+/* CAROUSEL */
+
+.carousel {
+    width: 1000px;
+    height: 500px;
+    margin: 20px auto 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.carousel ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.carousel li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.texto {
+    position: absolute;
+    text-align: center;
+    padding: 0 250px;
+    top: 250px;
+    color: #fff;
+    text-shadow: black 0 0 5px;
+
+}
+
+.texto h2 {
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+
+.carousel img {
+    width: 100%;
+
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
 
 /* SECTION CARDS */
 
@@ -162,8 +243,9 @@ section#bienvenidos {
     max-width: 100%;
     text-align: center;
     padding: 10px;
-    margin: 20px auto;
+    margin: 50px auto 0;
 }
+
 .imgCard {
     width: 100%;
     height: auto;
@@ -191,6 +273,7 @@ section#bienvenidos {
     border-radius: 4px;
     font-size: 1em;
 }
+
 .botonCard:hover {
     background-color: #0056b3;
 }
@@ -202,8 +285,8 @@ section#bienvenidos {
 #footer {
     height: 30px;
     color: #666;
-    
-} 
+
+}
 
 
 
@@ -243,6 +326,37 @@ button:hover {
     color: black;
 }
 
+
+/*  MAIN DE ELIXIRES*/
+
+.elixirMain {
+    display: grid;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    
+}
+
+.contenedorPpal {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+
+.titulo-elixir {
+    color: rgb(203, 98, 115);
+    padding: 1rem;
+}
+
+.elixir-img {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+
+
 /* mediaqueries */
 
 @media (max-width: 992px) {
@@ -259,6 +373,29 @@ button:hover {
     .desplegar_menu {
         display: block;
     }
+
+    body {
+        padding: 30px;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .texto {
+        top: 50%;
+        padding: 0;
+    }
+
+    .texto h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .texto p {
+        font-size: 0;
+    }
 }
 
 @media (max-width: 576px) {
@@ -266,4 +403,4 @@ button:hover {
         left: 2rem;
         width: unset;
     }
-} 
+}
