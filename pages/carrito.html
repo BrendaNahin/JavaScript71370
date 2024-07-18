@@ -37,16 +37,17 @@
 
 
         <h2 class="tituloCarrito">Carrito de compras</h2>
+
         <div class="carritoContain">
-            <p class="carritoVacio">¿Aun no agregras nada a tu carrito? </p>
+            <p class="carritoVacio">¿Aun no agregras nada a tu carrito?</p>
             
-            <div class="carritoProductos">
+            <div class="carritoProductos disabled">
 
                 <div class="carritoProducto">
-                    <img src="../assets/images/producto1.jpg" alt="">
+                    <img class="carritoImg" src="../assets/images/producto1.jpg" alt="">
                     <div class="carritoProductoName">
-                        <h6>Nombre</h6>
-                        <h3> producto 1</h3>
+                        <h6 class="chiquito1">Remy Martin</h6>
+                        <h3 class="chiquito2"> producto 1</h3>
                     </div>
 
                     <div class="carritoProductoCant">
@@ -70,10 +71,10 @@
                 </div>
 
                 <div class="carritoProducto">
-                    <img src="../assets/images/producto2.jpg" alt="">
+                    <img class="carritoImg" src="../assets/images/producto2.jpg" alt="">
                     <div class="carritoProductoName">
-                        <h6>Nombre</h6>
-                        <h3> producto 2</h3>
+                        <h6 class="chiquito">Oban</h6>
+                        <h3 class=""> producto 2</h3>
                     </div>
 
                     <div class="carritoProductoCant">
@@ -98,7 +99,7 @@
 
             </div>
 
-            <div class="carritoComandos">
+            <div class="carritoComandos disabled">
                 <div class="carritoComandosIzq">
                     <button class="vaciar">Vaciar carrito</button>
                 </div>
@@ -111,7 +112,7 @@
                 </div>
             </div>
 
-
+            <p class="carritoComprado disabled">Muchas gracias por elegirnos</p>
 
         </div>
 
@@ -119,7 +120,7 @@
 
     </main>
 
-    <footer> <p>Derechos reservados por Copyrigth <i class="fa-regular fa-copyright"></i></p></footer>
+    <footer class="disabled"> <p>Derechos reservados por Copyrigth <i class="fa-regular fa-copyright"></i></p></footer>
 
     <script src="./js/index.js"></script>
 </body>
