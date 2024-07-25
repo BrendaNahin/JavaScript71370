@@ -54,6 +54,8 @@ const productos = [
 ]
 
 const contenedorPpal = document.querySelector("#contenedorPpal");
+let botonesAgregar = document.querySelectorAll(".agregar-elixir");
+const numeroCart = document.querySelector("#numeroCart");
 
 function cargaProductos() {
 
@@ -71,9 +73,44 @@ function cargaProductos() {
                 </div>
                 `;
 
-                contenedorPpal.append(div);
+        contenedorPpal.append(div);
     })
+    actualizarBotonesAgregar();
 }
 
 
-cargaProductos ();
+cargaProductos();
+
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll(".agregar-elixir");
+
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+    });
+
+}
+const productosEnCarrito = [];
+function agregarAlCarrito(e) {
+
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = productos.find(productos.id === idBoton);
+
+    if (productosEnCarrito.some(productos => productos.id === idBoton)) {
+        const index = productosEnCarrito.findIndex(productos => productos.id === idBoton);
+        productosEnCarrito[index].cantidad++;
+
+    } else {
+        productoAgregado.cantidad = 1;
+
+        productosEnCarrito.push(productoAgregado);
+    }
+
+    actualizarNumero();
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+}
+
+function actualizarNumero() {
+    let nuevoNumeroCart = productosEnCarrito.reduce((acc, productos) => + productos.cantidad, 0);
+    numeroCart.innerText = nuevoNumeroCart;
+}
